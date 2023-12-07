@@ -6,6 +6,6 @@ from . import views
 app_name= "posts"
 
 urlpatterns = [
-    path("categoria", views.categorias),
-    path("post", views.post),
+    path("Categoria/", views.categorias),
+    path("Posts/", views.post),
 ]
