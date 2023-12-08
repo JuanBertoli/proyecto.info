@@ -3,11 +3,11 @@ from .models import *
 # Create your views here.
 
 def categorias(request):
-    return render(request, "categoria.html")
+    return render(request, "posts/categorias.html")
 
 def post(request):
-    return render(request, "post.html")
+    return render(request, "posts/post.html")
 
-def post_publicado(request):
+def post_realizado(request):
     posteos = Post.objects.all()
-    return render (request, "post.html", {"posteos": posteos})
+    return render(request, "posts/post.html", {"posteos": posteos})
