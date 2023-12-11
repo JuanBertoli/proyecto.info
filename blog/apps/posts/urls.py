@@ -1,11 +1,11 @@
-from django.urls import path
+# from django.urls import path
 
-# importar views
-from . import views
+# # importar views
+# from . import views
 
-app_name= "posts"
+# app_name= "posts"
 
-urlpatterns = [
-    path("Categoria/", views.categorias),
-    path("Posts/", views.post),
-]
+# urlpatterns = [
+#     path("Categoria/", views.categorias),
+#     path("Posts/", views.post),
+# ]
