@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registrarse</title>
+</head>
+<body>
+	<h2>Registrarse</h2>
+	<h3>Crear un usuario</h3>
+	<h3>Crear una contraseña</h3>
+	<h3>Repetir contraseña</h3>
+	<p>Aceptar</p>
+
+</body>
+</html>
