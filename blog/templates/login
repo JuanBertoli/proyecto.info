@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inicio de sesion</title>
+</head>
+<body>
+	<h2>Iniciar sesión</h2>
+	<h3>Usuario</h3>
+	<h3>Contraseña</h3>
+	<p>Aceptar</p>
+
+</body>
+</html>
