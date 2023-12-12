@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Post
+{% endblock %}
+
+{% block contenido %}
+
+<img src="{{post.imagen.url}}" width="650px" alt="No Hay Imagen" >
+<br>
+<h1>{{post.titulo}}</h1>
+<br>
+<h4>{{post.fecha}}</h4>
+<br>
+
+<br>
+<p>{{post.texto}}</p>
+
+{% endblock %}

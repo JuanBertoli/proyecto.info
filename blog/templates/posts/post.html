@@ -8,7 +8,7 @@
 
 {% for post in posteos %}
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
     <img src="{{ post.imagen.url }}" class="card-img-top" alt="No Hay Imagen">
     <div class="card-body">
       <h5 class="card-title">{{ post.titulo }}</h5>
@@ -17,10 +17,9 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Publicado: {{ post.fecha }}</li>
       <li class="list-group-item">{{ post.categoria }}</li>
-      <li class="list-group-item">A third item</li>
     </ul>
     <div class="card-body">
-      <a href="#" class="card-link">Ver Post</a>
+      <a href="">Ver Post</a>
     </div>
   </div>
 {% empty %}
@@ -30,3 +29,4 @@
 {% endblock contenido %}
 
 
+<!-- {% url 'posts:post_detail' post.pk %} -->
