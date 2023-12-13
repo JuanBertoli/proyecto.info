@@ -19,11 +19,14 @@ def posts(request):
     # print(posteos)
     id_categoria = request.GET.get('id', None)
     if id_categoria:
-        posteos = Post.objects.filter(categoria_post = id_categoria)
+        posteos = Post.objects.filter(categoria_post=id_categoria)
     else:
         posteos = Post.objects.all()
 
-    return render(request, "posts/post.html", {"posteos": posteos})
+    categorias = Categoria.objects.all()
+    ctx = zip(posteos, categorias)
+
+    return render(request, "posts/post.html", {"ctx": ctx, "posteos": posteos})
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
