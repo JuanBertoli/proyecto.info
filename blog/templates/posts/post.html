@@ -4,6 +4,21 @@
     Posteos
 {% endblock title %}
 
+{% block filtro %}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Categorias
+  </a>
+  <ul class="dropdown-menu"> 
+    {% for posteo, categoria in ctx %}
+    <li><a class="dropdown-item" href="?id={{posteo.pk}}">{{categoria.nombre}}</a></li>
+    {% endfor %}                
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="{% url 'posts:categorias' %}">Todas las categorias</a></li>
+  </ul>
+</li>
+{% endblock filtro %}
+
 {% block contenido %}
 
 {% for post in posteos %}

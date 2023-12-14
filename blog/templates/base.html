@@ -12,42 +12,44 @@
     {% endblock title %}
     </title>
 </head>
+
 <body>
+  {% if messages %}
+  {% for message in messages %}
+  <div>{{ message }}</div>
+  {% endfor %}
+  {% endif %}
   <header class="p-3 text-white bg-black">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-white">Inicio</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Sobre Nosotros</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Contacto</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categorias
-            </a>
-            <ul class="dropdown-menu">
-              {% for posteo, categoria in ctx %}
-              <li><a class="dropdown-item" href="?id={{posteo.pk}}">{{categoria.nombre}}</a></li>
-              {% endfor %}                
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'posts:categorias' %}">Todas las categorias</a></li>
-            </ul>
-          </li>
-        </ul>
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a> -->
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark text-white" placeholder="Search..." aria-label="Search">
-        </form>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 text-white">Inicio</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Sobre Nosotros</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Contacto</a></li>
+        {% block filtro %}
 
-        <div class="text-end">
-          <a type=button class="btn btn-outline-light" href="{% url 'login' %}" >Iniciar Sesión</a></button>
-          <button type="button" class="btn btn-outline-light">Registrarse</button>
-        </div>
+        {% endblock filtro %}
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+      </form>
+
+      <div class="text-end">
+        {% if user.is_authenticated %}
+        Bienvenido {{ user.username }}!
+        <a type=button class="btn btn-outline-light" href="{% url 'logout' %}" >Cerrar Sesión</a></button>
+        {% else %}
+        <a type=button class="btn btn-outline-light" href="{% url 'login' %}" >Iniciar Sesión</a></button>
+        <a type="button" class="btn btn-outline-light" href="{% url 'usuarios:registro' %}">Registrarse</a></button>
+        {% endif %}
       </div>
     </div>
+    
   </header>
   <!-- <nav class="navbar navbar-expand-lg bg-danger">
       <div class="container-fluid">
@@ -94,48 +96,6 @@ Contenido de la pagina
 {% endblock contenido %}
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-  <div >
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top bg-dark text-white">
-
-      <div class="col mb-3">
-  
-      </div>
-  
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-  
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-      
-      <div class="col mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-        </ul>
-      </div>
-    </footer>
-  </div>
 
   <!-- <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white">
       <div class="container text-center">

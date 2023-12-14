@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Registrarse</title>
-	<meta charset="utf-8">
-</head>
-<body>
-	<div>
-		<h2>Registrarse</h2>
-		<form method="post">
-			<input type="email" required>
-			<input type="password" required>
-			<input type="password" required>
-			<input type="submit" value="Registrarse">
-		</form>
+{% extends 'base.html' %}
 
-	</div>
+{% block title %}
+	Registro
+{% endblock %}
 
-</body>
-</html>
+{% block contenido %}
+<form method="POST" class="container center">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" id="submit" class="btn btn-primary">Registrarse</button>
+</form>
+{% endblock %}
