@@ -10,8 +10,8 @@
     Categorias
   </a>
   <ul class="dropdown-menu"> 
-    {% for posteo, categoria in ctx %}
-    <li><a class="dropdown-item" href="?id={{posteo.pk}}">{{categoria.nombre}}</a></li>
+    {% for categoria in categorias %}
+    <li><a class="dropdown-item" href="?id={{categoria.pk}}">{{categoria.nombre}}</a></li>
     {% endfor %}                
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="{% url 'posts:categorias' %}">Todas las categorias</a></li>

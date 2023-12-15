@@ -5,3 +5,18 @@ html {
 body {
     background-color: cadetblue;
 }
+
+.detalle{
+    /* display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical; */
+    overflow: auto;
+    height: 200px;
+}
+
+.contenedor-post{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}

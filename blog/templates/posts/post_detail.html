@@ -12,7 +12,7 @@
 <br>
 <h4>{{post.fecha}}</h4>
 <br>
-<p>{{post.texto}}</p>
+<p class="detalle" >{{post.texto}}</p>
 
 <form action="{% url 'posts:comentar' %}" method="POST">
     {% csrf_token %}

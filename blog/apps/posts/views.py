@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from .models import *
+from django.contrib.auth.decorators import login_required, permission_required
+from django.urls import reverse
 
 # Create your views here.
 
@@ -14,14 +16,8 @@ def categorias_post(request):
     ctx = {'categorias':categorias}
     return render(request, "posts/categorias.html", ctx)
 
-# def post(request):
-#     return render(request, "posts/post.html")
-
 def posts(request):
-    # posteos = Post.objects.all()
-    # categorias = Categoria.objects.all()
-    # print(categorias)
-    # print(posteos)
+
     id_categoria = request.GET.get('id', None)
     if id_categoria:
         posteos = Post.objects.filter(categoria=id_categoria)
@@ -29,9 +25,9 @@ def posts(request):
         posteos = Post.objects.all()
 
     categorias = Categoria.objects.all()
-    ctx = zip(posteos, categorias)
+    # ctx = zip(posteos, categorias)
 
-    return render(request, "posts/post.html", {"ctx": ctx, "posteos": posteos})
+    return render(request, "posts/post.html", {"categorias": categorias, "posteos": posteos})
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
