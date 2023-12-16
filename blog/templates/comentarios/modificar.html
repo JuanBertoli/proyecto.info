@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Eliminar comentario
+{% endblock title %}
+
+{% block contenido %}
+
+<form method="POST">
+    {% csrf_token %}
+    <h1>¿Deseas modificar este comentario?</h1>
+    {{ form }}
+    <button type="submit" class="btn btn-success"> Confirmar </button>
+</form>
+
+{% endblock contenido %}
+
+
+
+
+
+
+
+
+
+
+
+
+
