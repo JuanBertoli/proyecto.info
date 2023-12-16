@@ -83,23 +83,27 @@
         <div class="description-container">
             <p class="post-text">{{ post.texto }}</p>
         </div>
-
+        {% if user.is_authenticated %}
         <form action="{% url 'posts:comentar' %}" method="POST" class="mt-3">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="comentario" class="form-label">Agregar un comentario</label>
-                <textarea class="form-control" id="comentario" name="comentario" rows="5" placeholder="Escribe tu comentario aquí"></textarea>
+                <textarea class="form-control" id="comentario" name="comentario" rows="5" placeholder="Escribe tu comentario aquí" required></textarea>
             </div>
             <input type="text" name="id_post" value="{{ post.id }}" hidden>
             <button type="submit" class="btn btn-comentar">Comentar</button>
         </form>
-
-        <div class="comentarios-section mt-3">
+        {% endif %}
+        <div class="comentarios-section comentario mt-3">
             {% for comentario in post.comentarios_realizados %}
                 <div class="comentario mb-3">
                     <p class="comentario-date">{{ comentario.fecha }}</p>
                     <p class="comentario-usuario">{{ comentario.usuario }} comentó</p>
                     <p class="comentario-text">{{ comentario.texto }}</p>
+                    {% if user.is_authenticated and user.id == comentario.usuario_id or user.id == user.is_staff %}
+                    <a href="{% url 'posts:modificar_comentario' comentario.pk %}" type="button" class="btn btn-success">modificar</a>                    
+                    <a href="{% url 'posts:borrar_comentario' comentario.pk %}" type="button" class="btn btn-danger">borrar</a>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
