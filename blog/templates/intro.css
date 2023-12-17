@@ -1,0 +1,100 @@
+h1 {
+	color: 1677A2;
+	margin-left: 1650;
+	position: relative;
+	top: -110;
+	font-size: 45;
+
+}
+h2 {
+	text-align: center;
+	position: relative;
+	top: -95;
+	font-family: fantasy;
+	font-size: 35;
+	background-color: 1677A2;
+	padding: 30;
+	margin: -10;
+	border-radius: 20;
+}
+h3 {
+	font-family: fantasy;
+	font-size: 25;
+}
+body {
+	background-color: 1677A2;
+}
+p {
+	text-align: center;
+	position: relative;
+	top: -85;
+	font-size: 23;
+	background-color: 1677A2;
+	padding: 30;
+	margin: -10;
+}
+ a {
+	color: black;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+footer {
+	background-color: 232728;
+	position: relative;
+	top: 500;
+	padding: 20;
+	margin: -10;
+}
+
+header {
+	background-color: 232728;
+	padding: 30;
+	margin: -10;
+	border-radius: 50;
+}
+
+div a {
+	color: 1677A2;
+	text-decoration: none;
+	font-family: "verdana";
+	font-size: 20px;
+	position: relative;
+	top: -42;
+	left: 200;
+}
+
+ul {
+	background-color: 1677A2;
+	padding: 30;
+	margin: -10;
+	position: relative;
+	top: -75;
+}
+
+#cuenta {
+	color: 1677A2;
+	text-decoration: none;
+	font-family: "verdana";
+	font-size: 20px;
+}
+
+#contacto {
+	color: 1677A2;
+	text-decoration: none;
+	font-family: "verdana";
+	font-size: 20px;
+	position: relative;
+	left: 1600;
+}
+
+#nosotros {
+	color: 1677A2;
+	text-decoration: none;
+	font-family: "verdana";
+	font-size: 20px;
+	position: relative;
+	left: 100;
+}
+
