@@ -81,7 +81,7 @@
         <p class="post-date">{{ post.fecha }}</p>
 
         <div class="description-container">
-            <p class="post-text">{{ post.texto }}</p>
+            <p class="post-text">{{ post.texto | safe }}</p>
         </div>
         {% if user.is_authenticated %}
         <form action="{% url 'posts:comentar' %}" method="POST" class="mt-3">

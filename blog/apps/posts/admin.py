@@ -6,8 +6,8 @@ from .models import Categoria, Post
 
 @admin.register(Post)
 class PostsAdmin(admin.ModelAdmin):
-    list_display = ("id", "titulo", "subtitulo", "fecha", "texto",
-                    "activo", "categoria", "imagen", "publicado")
+    list_display = ("id", "titulo", "subtitulo", "fecha","activo",
+                    "categoria", "imagen", "publicado")
     
 
 
