@@ -5,14 +5,14 @@
 {% endblock title %}
 
 {% block contenido %}
-
-<form method="POST">
-    {% csrf_token %}
-    <h1>¿Deseas borrar este comentario?</h1>
-    {{ form }}
-    <button type="submit" class="btn btn-danger"> Confirmar </button>
-</form>
-
+<div class="text-white">
+    <form method="POST">
+        {% csrf_token %}
+        <h1>¿Deseas borrar este comentario?</h1>
+        {{ form }}
+        <button type="submit" class="btn btn-danger"> Confirmar </button>
+    </form>
+</div>
 {% endblock contenido %}
 
 

@@ -21,34 +21,37 @@
 
 {% block contenido %}
 
-{% for post in posteos %}
 
+<br>
 <div class="container text-center">
   <div class="row">
-    <div class="col">
-      <div class="card text-bg-dark mb-3" style="max-width: 540px;">
-        <div class="card-img-container">
-          <img src="{{ post.imagen.url }}" class="card-img" alt="No Hay Imagen">
-          <div class="card-body description-hidden">
-            <h5 class="card-title">{{ post.titulo }}</h5>
-            <p class="card-text">{{ post.subtitulo }}</p>
+    {% for post in posteos %}
+      <div class="col-3">
+        <div class="card text-bg-dark mb-3" style="max-width: 540px;">
+          <div class="card-img-container">
+            <img src="{{ post.imagen.url }}" class="card-img" alt="No Hay Imagen">
+            <div class="card-body description-hidden">
+              <h5 class="card-title">{{ post.titulo }}</h5>
+              <p class="card-text">{{ post.subtitulo }}</p>
+            </div>
+          </div>
+          <div class="card-footer text-center" style="background-color: black; color: white;">
+            <ul class="list-group list-group-flush" style="background-color: black; color: white;">
+              <li class="list-group-item" style="background-color: black; color: white;">Publicado: {{ post.fecha }}</li>
+              <li class="list-group-item" style="background-color: black; color: white;">{{ post.categoria }}</li>
+            </ul>
+            <a href="{% url 'posts:post_detail' post.id %}" class="btn btn-primary mt-2">Ver Trailer</a>
+            <a href="{% url 'posts:post_detail' post.id %}" class="btn btn-primary mt-2">Ver Post</a>
           </div>
         </div>
-        <div class="card-footer text-center" style="background-color: black; color: white;">
-          <ul class="list-group list-group-flush" style="background-color: black; color: white;">
-            <li class="list-group-item" style="background-color: black; color: white;">Publicado: {{ post.fecha }}</li>
-            <li class="list-group-item" style="background-color: black; color: white;">{{ post.categoria }}</li>
-          </ul>
-          <a href="{% url 'posts:post_detail' post.id %}" class="btn btn-primary mt-2">Ver Post</a>
-        </div>
       </div>
-    </div>
+    {% empty %}
+    <h1>No Hay Posts</h1>
+    {% endfor %}   
   </div>
 </div>
 
-{% empty %}
-<h1>No Hay Posts</h1>
-{% endfor %} 
+
 <style>
   .card-img-container {
     position: relative;

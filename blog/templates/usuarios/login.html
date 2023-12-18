@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block contenido %}
-<div class="text-white"></div>
+<div class="text-white">
 <form method="POST" class="container center">
 	{% csrf_token %}
 	{{ form.as_p }}
