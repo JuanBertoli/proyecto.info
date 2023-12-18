@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block contenido %}
-<form method="POST" class="container center">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<button type="submit" id="submit" class="btn btn-primary">Registrarse</button>
-</form>
+<div class="text-white">
+	<form method="POST" class="container center">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" id="submit" class="btn btn-primary">Registrarse</button>
+	</form>
+</div>
 {% endblock %}

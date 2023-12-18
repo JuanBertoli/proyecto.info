@@ -1,17 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es-ar">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="icon" href="static/img/icono.ico">
-    <title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="icon" href="static/img/icono.ico">
+  <title>
     {% block title %}
-    Titulo de la pagina 
+    Titulo de la pagina
     {% endblock title %}
-    </title>
+  </title>
 </head>
 
 <body>
@@ -26,8 +28,8 @@
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="{% url 'posts:Inicio' %}" class="nav-link px-2 text-white">Cine De Culto</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Sobre Nosotros</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Contacto</a></li>
+        <li><a href="#Nosotros" class="nav-link px-2 text-white">Sobre Nosotros</a></li>
+        <li><a href="#Contactos" class="nav-link px-2 text-white">Contacto</a></li>
         {% block filtro %}
 
         {% endblock filtro %}
@@ -35,29 +37,54 @@
       <div class="text-end">
         {% if user.is_authenticated %}
         Bienvenido {{ user.username }}!
-        <a type=button class="btn btn-outline-light" href="{% url 'logout' %}" >Cerrar Sesión</a></button>
+        <a type=button class="btn btn-outline-light" href="{% url 'logout' %}">Cerrar Sesión</a></button>
         {% else %}
-        <a type=button class="btn btn-outline-light" href="{% url 'login' %}" >Iniciar Sesión</a></button>
+        <a type=button class="btn btn-outline-light" href="{% url 'login' %}">Iniciar Sesión</a></button>
         <a type="button" class="btn btn-outline-light" href="{% url 'usuarios:registro' %}">Registrarse</a></button>
         {% endif %}
       </div>
     </div>
-    
+
   </header>
 
-<div class="container">
-{% block contenido %}
-Contenido de la pagina
-{% endblock contenido %}
-</div>
-<br>
+  <div class="container">
+    {% block contenido %}
+    Contenido de la pagina
+    {% endblock contenido %}
+  </div>
+  <br>
 
-<footer class="flex-shrink-0 py-5 bg-black">
+  <footer class="py-2 bg-black">
+    <div class="container text-center text-white">
+      <section id="Nosotros">
+      <h3>Sobre Nosotros</h3>
+        <ul class="container">
+          <p>
+            Esta pagina web fue desarrollada por
+            Iván Nuñez Londero,
+            Juan Ramón Bertoli Rojas
+            y Jonathan Ezequiel Quain
+            para el Informatorio
+          </p>
+        </ul>  
+      </section>    
+      <hr>
+      <section id="Contactos">
+      <h3>Contactos</h3>
+      <ul class="container">
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=ivanlondero17@gmail.com&amp;body=">Iván Nuñez Londero</a>
+        <hr>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=bertolijuan777@gmail.com&amp;body=">Juan Ramón Bertoli Rojas</a>
+        <hr>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=ezequielquain@gmail.com&amp;body=">Jonathan Ezequiel Quain</a>
+      </ul>
+      </section>
+    </div>
+  </footer>
 
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
-
-

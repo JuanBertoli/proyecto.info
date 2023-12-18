@@ -3,9 +3,7 @@ html {
 }
 
 body {
-    background-image: url("../img/fondo.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
+    background-color: rgb(10, 10, 49);
 }
 
 .detalle{
