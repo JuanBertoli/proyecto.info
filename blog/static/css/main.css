@@ -3,7 +3,9 @@ html {
 }
 
 body {
-    background-color: skyblue;
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 .detalle{
@@ -19,4 +21,7 @@ body {
     display: flex;
     justify-content: flex-end;
 
+}
+.texto_blanco{
+    text-decoration-color: white;
 }
