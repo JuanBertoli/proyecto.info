@@ -5,6 +5,7 @@
 {% endblock title %}
 
 {% block filtro %}
+<li><a href="{% url 'posts:Inicio' %}" class="nav-link px-2 text-white">Regresar</a></li>
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Categorias
@@ -13,8 +14,6 @@
     {% for categoria in categorias %}
     <li><a class="dropdown-item" href="?id={{categoria.pk}}">{{categoria.nombre}}</a></li>
     {% endfor %}                
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="{% url 'posts:categorias' %}">Todas las categorias</a></li>
   </ul>
 </li>
 {% endblock filtro %}
@@ -40,7 +39,6 @@
               <li class="list-group-item" style="background-color: black; color: white;">Publicado: {{ post.fecha }}</li>
               <li class="list-group-item" style="background-color: black; color: white;">{{ post.categoria }}</li>
             </ul>
-            <a href="{% url 'posts:post_detail' post.id %}" class="btn btn-primary mt-2">Ver Trailer</a>
             <a href="{% url 'posts:post_detail' post.id %}" class="btn btn-primary mt-2">Ver Post</a>
           </div>
         </div>

@@ -23,3 +23,8 @@ body {
 .texto_blanco{
     text-decoration-color: white;
 }
+
+.fondo_oscuro{
+    background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75));
+    
+}
