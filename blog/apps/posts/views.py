@@ -20,13 +20,27 @@ def categorias_post(request):
 def posts(request):
 
     id_categoria = request.GET.get('id', None)
+    antiguedad = request.GET.get("orden", None)
+    alfabetico = request.GET.get("orden", None)
+    ctx = {}
+
     if id_categoria:
         posteos = Post.objects.filter(categoria=id_categoria)
     else:
-        posteos = Post.objects.all()
+        if antiguedad == "asc":
+            posteos = Post.objects.all().order_by("fecha")
+        elif alfabetico == "a":
+            posteos = Post.objects.all().order_by("titulo")
+        elif alfabetico == "z":
+            posteos = Post.objects.all().order_by("-titulo")
+        else:
+            posteos = Post.objects.all().order_by("-fecha")
 
+    
     categorias = Categoria.objects.all()
-    # ctx = zip(posteos, categorias)
+    ctx["posteos"]= posteos
+    ctx["categorias"]= categorias
+    
 
     return render(request, "posts/post.html", {"categorias": categorias, "posteos": posteos})
 

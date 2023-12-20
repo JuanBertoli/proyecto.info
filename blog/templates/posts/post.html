@@ -8,12 +8,19 @@
 <li><a href="{% url 'posts:Inicio' %}" class="nav-link px-2 text-white">Regresar</a></li>
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Categorias
+    Filtro
   </a>
   <ul class="dropdown-menu"> 
+    <li>Categoria</li>
     {% for categoria in categorias %}
     <li><a class="dropdown-item" href="?id={{categoria.pk}}">{{categoria.nombre}}</a></li>
-    {% endfor %}                
+    {% endfor %}            
+    <li><hr class="dropdown-divider">Fecha</li>
+    <li><a class="dropdown-item" href="?orden=asc">Ascendente</a></li>    
+    <li><a class="dropdown-item" href="?orden=desc">Descendente</a></li>    
+    <li><hr class="dropdown-divider">Letra</li>
+    <li><a class="dropdown-item" href="?orden=a">A-Z</a></li>    
+    <li><a class="dropdown-item" href="?orden=z">Z-A</a></li>    
   </ul>
 </li>
 {% endblock filtro %}

@@ -1,15 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'usuarios/register.html' %}
 
 {% block title %}
 	Inicio de sesion
 {% endblock %}
 
+
 {% block contenido %}
-<div class="text-white">
-<form method="POST" class="container center">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<button type="submit" class="btn btn-primary">Iniciar sesión</button>
-</form>
+<div class="container-login">
+<div class="text-white form-login login-box">
+	<h3>Inicio de sesión</h3>
+	<form method="POST">
+		{% csrf_token %}
+		<label for="{{ form.username.id_for_label }}"> usuario </label>
+		{{ form.username }}
+		<label for="{{ form.password.id_for_label }}"> contraseña </label>
+		{{ form.password }}
+		<input type="submit" class="btn btn-primary" value="Iniciar sesión">
+
+	</form>
+</div>
 </div>
 {% endblock %}

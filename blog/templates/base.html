@@ -29,6 +29,9 @@
         <li><a href="{% url 'posts:Inicio' %}" class="nav-link px-2 text-white">Cine De Culto</a></li>
         <li><a href="#Nosotros" class="nav-link px-2 text-white">Sobre Nosotros</a></li>
         <li><a href="#Contactos" class="nav-link px-2 text-white">Contacto</a></li>
+        {% if user.is_authenticated and user.is_staff%}
+        <li><a href="{% url 'admin:index' %}" class="nav-link px-2 text-white">Administrar</a></li>
+        {% endif %}
         {% block filtro %}
 
         {% endblock filtro %}
@@ -53,7 +56,7 @@
   </div>
   <br>
 
-  <footer class="py-2 bg-black">
+  <footer class="py-2 bg-black footer">
     <div class="container text-center text-white">
       <section id="Nosotros">
       <h3>Sobre Nosotros</h3>

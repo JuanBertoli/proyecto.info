@@ -24,7 +24,112 @@ body {
     text-decoration-color: white;
 }
 
-.fondo_oscuro{
-    background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75));
-    
+.container-login{
+    width: 100vw;
+    height: 80vh;
+    display: grid;
+    place-items: center;
+    margin-left: -81px;
+    margin-right: 0;
+}
+
+.form-login{
+    width: 30vw;
+
+}
+
+/* .form-login form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 3rem;
+} */
+
+.login-box {
+    width: 320px;
+    height: 280px;
+    background: #524d4d55;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 30px 30px;
+}
+.login-box h1{
+    text-align: center;
+}
+
+.login-box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.login-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box h1{
+    text-align: center;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box input[type="email"]{
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    height: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.register-box {
+    width: 320px;
+    height: 420px;
+    background: #524d4d55;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 30px 30px;
+}
+
+.register-box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.register-box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.register-box h1{
+    text-align: center;
+}
+
+.register-box input[type="text"],
+.register-box input[type="password"],
+.register-box input[type="email"]{
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    height: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+.boton-back{
+    margin: 20px;
 }
