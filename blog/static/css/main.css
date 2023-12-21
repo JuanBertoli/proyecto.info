@@ -46,6 +46,19 @@ body {
     gap: 3rem;
 } */
 
+.confirm-box {
+    min-width: 120px;
+    min-height: 120px;
+    background: #524d4d55;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 30px 30px;
+}
+
 .login-box {
     width: 320px;
     height: 280px;
@@ -144,5 +157,11 @@ body {
 
 .card-title,.card-text{
     text-shadow: 2px 2px 2px #000;
+}
+
+.centrar{
+    position: relative;
+    top: 10px;
+    left: 40%;
 }
 

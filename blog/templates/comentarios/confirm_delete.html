@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'usuarios/register.html' %}
 
 {% block title %}
     Eliminar comentario
@@ -6,11 +6,11 @@
 
 {% block contenido %}
 <div class="text-white">
-    <form method="POST">
+    <form method="POST" class="confirm-box">
         {% csrf_token %}
         <h1>¿Deseas borrar este comentario?</h1>
         {{ form }}
-        <button type="submit" class="btn btn-danger"> Confirmar </button>
+        <button type="submit" class="btn btn-danger centrar"> Confirmar </button>
     </form>
 </div>
 {% endblock contenido %}
