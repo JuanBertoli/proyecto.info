@@ -1,28 +1,31 @@
 {% extends 'usuarios/register.html' %}
 
 {% block title %}
-    Modificar comentario
+    Modificar Comentario
 {% endblock title %}
 
 {% block contenido %}
-<div class="text-white">
-    <form method="POST">
-        {% csrf_token %}
-        <h1>¿Deseas modificar este comentario?</h1>
-        {{ form }}
-        <button type="submit" class="btn btn-success"> Confirmar </button>
-    </form>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card bg-light">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Modificar Comentario</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.as_p }}
+                        </div>
+                        <button type="submit" class="btn btn-success">Confirmar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock contenido %}
-
-
-
-
-
-
-
-
-
 
 
 
