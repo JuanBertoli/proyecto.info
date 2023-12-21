@@ -99,6 +99,7 @@
             <input type="text" name="id_post" value="{{ post.id }}" hidden>
             <button type="submit" class="btn btn-comentar">Comentar</button>
         </form>
+
         {% else %}
         <div class="mb-3">
             <label for="comentario" class="form-label">Agregar un comentario</label>
@@ -120,6 +121,8 @@
 
         </div>
         {% endfor %}
+
+        
     </div>
 
     <!-- Agrega el CDN de Bootstrap al final del archivo para incluirlo -->

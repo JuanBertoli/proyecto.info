@@ -70,4 +70,5 @@ class Modificar_Comentario(UpdateView):
     model = Comentario
     form_class = Formulario_Modificacion
     template_name = "comentarios/modificar.html"
+    context_object_name = "com"
     success_url = reverse_lazy("posts:posts")
