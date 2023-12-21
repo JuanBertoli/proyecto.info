@@ -26,12 +26,16 @@
 		{% csrf_token %}
 		<label for="{{ form.username.id_for_label }}">Nombre de usuario:</label>
 		{{ form.username }}
+		{{ form.username.errors }}
 		<label for="{{ form.username.id_for_label }}">Email:</label>
 		{{ form.email }}
+		{{ form.email.errors }}
 		<label for="{{ form.username.id_for_label }}">Contraseña:</label>
 		{{ form.password1 }} 
+		{{ form.password1.errors }}
 		<label for="{{ form.username.id_for_label }}">Confirmar Contraseña:</label>
 		{{ form.password2 }} 
+		{{ form.password2.errors }}
 		<input type="submit" id="submit" value="Registrarse" class="btn btn-primary">
 	</form>
 </div>

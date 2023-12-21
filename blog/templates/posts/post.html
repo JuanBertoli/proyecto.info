@@ -16,8 +16,8 @@
     <li><a class="dropdown-item" href="?id={{categoria.pk}}">{{categoria.nombre}}</a></li>
     {% endfor %}            
     <li><hr class="dropdown-divider">Fecha</li>
-    <li><a class="dropdown-item" href="?orden=asc">Ascendente</a></li>    
-    <li><a class="dropdown-item" href="?orden=desc">Descendente</a></li>    
+    <li><a class="dropdown-item" href="?orden=desc">Más recientes</a></li>   
+    <li><a class="dropdown-item" href="?orden=asc">Más antiguos</a></li>     
     <li><hr class="dropdown-divider">Letra</li>
     <li><a class="dropdown-item" href="?orden=a">A-Z</a></li>    
     <li><a class="dropdown-item" href="?orden=z">Z-A</a></li>    
@@ -37,7 +37,7 @@
           <div class="card-img-container">
             <img src="{{ post.imagen.url }}" class="card-img" alt="No Hay Imagen">
             <div class="card-body description-hidden">
-              <h5 class="card-title">{{ post.titulo }}</h5>
+              <h2 class="card-title">{{ post.titulo }}</h2>
               <p class="card-text">{{ post.subtitulo }}</p>
             </div>
           </div>

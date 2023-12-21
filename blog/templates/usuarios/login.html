@@ -13,8 +13,10 @@
 		{% csrf_token %}
 		<label for="{{ form.username.id_for_label }}"> usuario </label>
 		{{ form.username }}
+		{{ form.username.errors }}
 		<label for="{{ form.password.id_for_label }}"> contraseña </label>
 		{{ form.password }}
+		{{ form.password1.errors }}
 		<input type="submit" class="btn btn-primary" value="Iniciar sesión">
 
 	</form>
